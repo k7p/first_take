@@ -11840,7 +11840,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>   
@@ -11896,7 +11896,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">smith</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
@@ -11912,7 +11912,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[4]:</div>
+<div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -11983,7 +11983,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">skip</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
@@ -11999,7 +11999,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[5]:</div>
+<div class="prompt output_prompt">Out[6]:</div>
 
 
 
@@ -12070,7 +12070,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">smith_df</span> <span class="o">=</span> <span class="n">smith</span><span class="p">[[</span><span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="s1">&#39;label&#39;</span><span class="p">]]</span>
@@ -12086,7 +12086,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
@@ -12102,7 +12102,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[7]:</div>
+<div class="prompt output_prompt">Out[8]:</div>
 
 
 
@@ -12137,7 +12137,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">other_stops</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;stephen&#39;</span><span class="p">,</span> <span class="s1">&#39;a.&#39;</span><span class="p">,</span> <span class="s1">&#39;smith&#39;</span><span class="p">,</span> <span class="s1">&#39;skip bayless&#39;</span><span class="p">,</span> <span class="s1">&#39;@undisputed.&#39;</span><span class="p">,</span>\
@@ -12158,23 +12158,25 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">process_tweet</span><span class="p">(</span><span class="n">tweet</span><span class="p">):</span>
-
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The process_tweet function takes as input a raw tweet and cleans it by removing links, </span>
+<span class="sd">    non alphanumeric characters, links, and stopwords.</span>
+<span class="sd">    </span>
+<span class="sd">    Arugments:</span>
+<span class="sd">        tweet: a single tweet</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        a cleaned tweet</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">no_links</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(www|http:|https:)+[^\s]+[\w]&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">tweet</span><span class="p">))</span>
-    
     <span class="n">letters_only</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[^a-zA-Z]&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">no_links</span><span class="p">))</span> 
-        
     <span class="n">words</span> <span class="o">=</span> <span class="n">letters_only</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-    
     <span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="n">w</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">w</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s2">&quot;english&quot;</span><span class="p">))]</span> 
-    
     <span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="n">w</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="n">w</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">(</span><span class="n">other_stops</span><span class="p">)]</span>
-    
     <span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="n">w</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">words</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">]</span>
-    
     <span class="k">return</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
 </pre></div>
 
@@ -12185,12 +12187,12 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Original Tweet: &#39;</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">][</span><span class="mi">2</span><span class="p">]))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Original Tweet: &#39;</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]))</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Cleaned tweet: &#39;</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">process_tweet</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">][</span><span class="mi">2</span><span class="p">])))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Cleaned tweet: &#39;</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">process_tweet</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">])))</span>
 </pre></div>
 
 </div>
@@ -12207,9 +12209,9 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Original Tweet: My Lord!!! We&#39;re talking burner accounts. #ESPNradio https://t.co/og47lCKozx https://t.co/CXRHy9HrLU
+<pre>Original Tweet: RT @FirstTake: The stage is finally set. Join us on the road for the NBA Finals. https://t.co/pvsuPnqv35
 
-Cleaned tweet: lord talking burner accounts espnradio
+Cleaned tweet: stage finally set join us road nba finals
 </pre>
 </div>
 </div>
@@ -12749,6 +12751,15 @@ if(typeof(LDAvis) !== "undefined"){
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">display_f1</span><span class="p">(</span><span class="n">true_labels</span><span class="p">,</span> <span class="n">predicted_labels</span><span class="p">,</span> <span class="n">positive_class</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The display_f1 function displays the f1 score for a model&#39;s outputs.</span>
+<span class="sd">    </span>
+<span class="sd">    Arguments:</span>
+<span class="sd">        true_labels: the true labels of the data you predicted on</span>
+<span class="sd">        predicted_labels: the predicted labels from your model</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        The F1 score of the predicted labels.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;F1 Score:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span>
                             <span class="n">f1_score</span><span class="p">(</span><span class="n">true_labels</span><span class="p">,</span> 
                                                <span class="n">predicted_labels</span><span class="p">,</span>
@@ -13235,7 +13246,7 @@ if(typeof(LDAvis) !== "undefined"){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Experimentation-with-Glove-word-vectors">Experimentation with Glove word vectors<a class="anchor-link" href="#Experimentation-with-Glove-word-vectors">&#182;</a></h3><p>We can also try to use word vectors from from the <a href="https://nlp.stanford.edu/projects/glove/">https://nlp.stanford.edu/projects/glove/</a> instead of the Tfidfvectorizer for tokenizing our tweets and see if that helps our predictive accuracy.</p>
+<h3 id="Experimentation-with-Glove-word-vectors">Experimentation with Glove word vectors<a class="anchor-link" href="#Experimentation-with-Glove-word-vectors">&#182;</a></h3><p>We can also try to use word vectors from from the <a href="https://nlp.stanford.edu/projects/glove/">https://nlp.stanford.edu/projects/glove/</a> instead of the Tfidfvectorizer for tokenizing our tweets and see if that helps our predictive accuracy. A good reference for the following functions comes from Terence Parr's recommender assignment at <a href="https://github.com/parrt/msan692/blob/master/hw/recommender.md">https://github.com/parrt/msan692/blob/master/hw/recommender.md</a>.</p>
 
 </div>
 </div>
@@ -13245,13 +13256,22 @@ if(typeof(LDAvis) !== "undefined"){
 <div class="prompt input_prompt">In&nbsp;[55]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">load_glove</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">glove_word_vecs</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The function glove_word_vecs returns a dictionary with words as keys and</span>
+<span class="sd">    numpy vectors as values corresponding to the words.</span>
+<span class="sd">    </span>
+<span class="sd">    Arguments:</span>
+<span class="sd">        filename: the path to the glove vector files</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        a dictionary mapping word to vector</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="nb">dict</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">allLines</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">allLines</span><span class="p">:</span>
         <span class="n">elements</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\r</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
         <span class="n">word</span> <span class="o">=</span> <span class="n">elements</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">items2</span> <span class="o">=</span> <span class="p">[</span> <span class="nb">float</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">elements</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="p">]</span>
+        <span class="n">items2</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">elements</span><span class="p">[</span><span class="mi">1</span><span class="p">:]]</span>
         <span class="n">the_nums</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">items2</span><span class="p">)</span>  
         <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">word</span><span class="p">)]</span> <span class="o">=</span> <span class="n">the_nums</span>          
     <span class="k">return</span> <span class="nb">dict</span>   
@@ -13267,7 +13287,16 @@ if(typeof(LDAvis) !== "undefined"){
 <div class="prompt input_prompt">In&nbsp;[57]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">doc2vec</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">gloves</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_centroid</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">gloves</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function returns the word vector centroid for the text from the gloves file.</span>
+<span class="sd">    </span>
+<span class="sd">    Arguments: </span>
+<span class="sd">        text: a line of text</span>
+<span class="sd">        gloves: a loaded gloves word vector file</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        a word vector centroid</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">dimension</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">gloves</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
     <span class="n">word_vect_sum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">dimension</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float&#39;</span><span class="p">)</span>
     <span class="n">common</span> <span class="o">=</span> <span class="p">[</span><span class="n">w</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">text</span> <span class="k">if</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">gloves</span><span class="p">]</span>
@@ -13283,23 +13312,14 @@ if(typeof(LDAvis) !== "undefined"){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[75]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">glove</span> <span class="o">=</span> <span class="n">load_glove</span><span class="p">(</span><span class="s1">&#39;/Users/mbk/desktop/glove.6B/glove.6B.100d.txt&#39;</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 <div class="prompt input_prompt">In&nbsp;[59]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tweet_embedding</span> <span class="o">=</span> <span class="p">[</span><span class="n">doc2vec</span><span class="p">(</span><span class="n">tweet</span><span class="p">,</span> <span class="n">glove</span><span class="p">)</span> <span class="k">for</span> <span class="n">tweet</span> <span class="ow">in</span> <span class="n">train</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">glove</span> <span class="o">=</span> <span class="n">glove_word_vecs</span><span class="p">(</span><span class="s1">&#39;/Users/mbk/desktop/glove.6B/glove.6B.100d.txt&#39;</span><span class="p">)</span>
+
+<span class="n">tweet_embedding</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">tweet</span> <span class="ow">in</span> <span class="n">train</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]:</span>
+    <span class="n">tweet_embedding</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">get_centroid</span><span class="p">(</span><span class="n">tweet</span><span class="p">,</span> <span class="n">glove</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -13572,6 +13592,15 @@ if(typeof(LDAvis) !== "undefined"){
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 
 <span class="k">def</span> <span class="nf">print_confusion_matrix</span><span class="p">(</span><span class="n">confusion_matrix</span><span class="p">,</span> <span class="n">class_names</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This function prints a confusion matrix in pretty format using a seaborn color scheme.</span>
+<span class="sd">    </span>
+<span class="sd">    Arguments:</span>
+<span class="sd">        confusion_matrix: a sklean confusion matrix</span>
+<span class="sd">        class_names: the names of class 0 and class 1</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        a colored confusion matrix</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">df_cm</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
         <span class="n">confusion_matrix</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">class_names</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">class_names</span><span class="p">,</span> 
     <span class="p">)</span>
